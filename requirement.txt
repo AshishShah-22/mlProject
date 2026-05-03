@@ -8,4 +8,4 @@ kagglesdk
 scikit-learn
 catboost
 xgboost
-#-e .
+-e .
