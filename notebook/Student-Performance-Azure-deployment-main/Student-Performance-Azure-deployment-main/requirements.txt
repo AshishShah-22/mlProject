@@ -1,11 +1,11 @@
 pandas
-numpy 
+numpy
 seaborn
 matplotlib
-kaggle
-kagglehub 
-kagglesdk
 scikit-learn
 catboost
 xgboost
-#-e .
+dill
+Flask
+-e .
+
