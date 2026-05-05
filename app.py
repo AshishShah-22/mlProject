@@ -16,7 +16,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/predictdate',methods=['GET','POST'])
+@app.route('/predictdata',methods=['GET','POST'])
 
 def predict_datapoint():
     if request.method == 'GET':

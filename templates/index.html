@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Performance Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-card {
+            background: var(--glass-bg);
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1.title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            color: var(--text-main);
+            line-height: 1.1;
+        }
+
+        p.description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        /* Decorative blobs */
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            filter: blur(50px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .blob-1 { top: 10%; left: 10%; }
+        .blob-2 { bottom: 10%; right: 10%; }
+    </style>
 </head>
 <body>
-    <h1 class="title">Welcome to the page</h1>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-card">
+        <span class="badge">Machine Learning Project</span>
+        <h1 class="title">Student Performance Analytics</h1>
+        <p class="description">
+            Leverage data science to understand the factors affecting academic success. 
+            Our model analyzes demographics and study habits to predict student outcomes with high accuracy.
+        </p>
+        
+        <a href="/predictdata" class="cta-button">Get Started</a>
+
+        
+    </div>
+
 </body>
 </html>
