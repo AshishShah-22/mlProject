@@ -33,12 +33,9 @@ def predict_datapoint():
             writing_score=float(request.form.get('writing_score')),
         )
 
-        print('FORM DATA:')
-        print(request.form)
 
         pred_df = data.get_data_as_data_frame()
 
-        # 🔥 COLUMN NAME FIX
         pred_df.rename(columns={
             "race_ethnicity": "race/ethnicity",
             "parental_level_of_education": "parental level of education",
@@ -47,14 +44,9 @@ def predict_datapoint():
             "writing_score": "writing score"
         }, inplace=True)
 
-        print(pred_df)
-        print('null values')
-        print(pred_df.isnull().sum())
-
         predict_pipeline = predictPipeline()
         results = predict_pipeline.predict(pred_df)
 
-        print("RESULT:", results)
 
         if results is None:
             return "prediction failed"

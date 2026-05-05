@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-# 🔹 Load model & preprocessor
+
 @st.cache_resource
 def load_objects():
     with open("artifacts/model.pkl", "rb") as f:
@@ -15,9 +15,9 @@ def load_objects():
 
 model, preprocessor = load_objects()
 
-st.title("🎯 Model Test (Streamlit)")
+st.title(" Model Test (Streamlit)")
 
-# 🔹 Inputs
+
 gender = st.selectbox("Gender", ["male", "female"])
 race = st.selectbox("Race/Ethnicity", ["group A", "group B", "group C", "group D", "group E"])
 education = st.selectbox("Parental Education", [
@@ -29,7 +29,7 @@ test_course = st.selectbox("Test Preparation Course", ["none", "completed"])
 reading = st.number_input("Reading Score", min_value=0, max_value=100, value=50)
 writing = st.number_input("Writing Score", min_value=0, max_value=100, value=50)
 
-# 🔹 Predict button
+
 if st.button("Predict"):
     try:
         data = pd.DataFrame({
@@ -42,12 +42,12 @@ if st.button("Predict"):
             "writing score": [writing]
         })
 
-        st.write("🔍 Input Data:", data)
+        st.write(" Input Data:", data)
 
         data_scaled = preprocessor.transform(data)
         pred = model.predict(data_scaled)
 
-        st.success(f"✅ Prediction: {pred[0]}")
+        st.success(f" Prediction: {pred[0]}")
 
     except Exception as e:
-        st.error(f"❌ Error: {e}")
+        st.error(f" Error: {e}")
